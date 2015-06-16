@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the sampleShopFrontendApp
  */
-angular.module('sampleShopFrontendApp')
+angular.module('app')
   .controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

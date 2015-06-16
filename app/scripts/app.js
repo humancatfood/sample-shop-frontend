@@ -8,25 +8,31 @@
  *
  * Main module of the application.
  */
-angular
-  .module('sampleShopFrontendApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+
+(function () {
+
+    var app = angular.module('app', [ 'ngAnimate',
+                                      'ngCookies',
+                                      'ngRoute',
+                                      'ngSanitize',
+                                      'ngTouch' ]);
+
+    app.config(['$routeProvider', function ($routeProvider) {
+
+        $routeProvider.when('/', {
+            templateUrl: 'views/main.html',
+            controller: 'MainCtrl'
+        });
+
+        $routeProvider.when('/about', {
+            templateUrl: 'views/about.html',
+            controller: 'AboutCtrl'
+        });
+
+        $routeProvider.otherwise({
+            redirectTo: '/'
+        });
+
+    }]);
+
+}(window.angular));
