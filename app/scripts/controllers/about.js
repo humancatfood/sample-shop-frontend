@@ -7,11 +7,19 @@
  * # AboutCtrl
  * Controller of the sampleShopFrontendApp
  */
-angular.module('app')
-  .controller('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+
+(function (angular) {
+
+    var app = angular.module('app');
+
+    app.controller('AboutCtrl', ['$scope', function ($scope) {
+
+        $scope.awesomeThings = [
+            'HTML5 Boilerplate',
+            'AngularJS',
+            'Karma'
+        ];
+
+    }]);
+
+}(window.angular));
