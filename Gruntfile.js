@@ -405,6 +405,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('test', [
+        'jshint',
         'clean:server',
         'wiredep',
         'concurrent:test',
