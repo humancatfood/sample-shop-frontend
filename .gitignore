@@ -5,3 +5,5 @@ dist
 bower_components
 .idea
 *.pdf
+
+app/styles/less/**/*.css
