@@ -9,29 +9,31 @@
  * Main module of the application.
  */
 
-(function () {
+(function (angular) {
 
     var app = angular.module('app', [ 'ngAnimate',
                                       'ngCookies',
-                                      'ngRoute',
                                       'ngSanitize',
-                                      'ngTouch' ]);
+                                      'ngTouch',
+                                      'ui.router' ]);
 
-    app.config(['$routeProvider', function ($routeProvider) {
+    app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', function ($locationProvider, $stateProvider, $urlRouterProvider) {
 
-        $routeProvider.when('/', {
+        $locationProvider.html5Mode(true);
+
+         $stateProvider.state('main', {
+            url: '/',
             templateUrl: 'views/main.html',
             controller: 'MainCtrl'
         });
 
-        $routeProvider.when('/about', {
+        $stateProvider.state('about', {
+            url: '/about',
             templateUrl: 'views/about.html',
             controller: 'AboutCtrl'
         });
 
-        $routeProvider.otherwise({
-            redirectTo: '/'
-        });
+        $urlRouterProvider.otherwise('/');
 
     }]);
 
