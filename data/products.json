@@ -1,0 +1,44 @@
+{
+    "product001": {
+        "name": "Useful Boots",
+        "dateAdded": 1434573538291,
+        "img": "http://i.imgur.com/uTXTDUi.jpg",
+        "description": "For keeping your feet dry. Or not."
+    },
+    "product002": {
+        "name": "Useful Bowl",
+        "dateAdded": 1434573538292,
+        "img": "http://i.imgur.com/NGYCSLm.jpg",
+        "description": "For eating. Quickly."
+    },
+    "product003": {
+        "name": "Useful Fork",
+        "dateAdded": 1434573538293,
+        "img": "http://i.imgur.com/32aIn3Z.jpg",
+        "description": "For not eating at all."
+    },
+    "product004": {
+        "name": "Useful Key",
+        "dateAdded": 1434573538294,
+        "img": "http://i.imgur.com/qp56o1F.jpg",
+        "description": "For opening doors."
+    },
+    "product005": {
+        "name": "Useful Plate",
+        "dateAdded": 1434573538295,
+        "img": "http://i.imgur.com/zRGD0gG.jpg",
+        "description": "For .. eating?"
+    },
+    "product006": {
+        "name": "Useful Pot",
+        "dateAdded": 1434573538296,
+        "img": "http://i.imgur.com/fqVAiOC.jpg",
+        "description": "For beating your enemies to death."
+    },
+    "product007": {
+        "name": "Useful Chair",
+        "dateAdded": 1434573538297,
+        "img": "http://i.imgur.com/PpI077Q.jpg",
+        "description": "For sitting. Attentively!"
+    }
+}

@@ -64,7 +64,8 @@ module.exports = function (grunt) {
                 port: 9000,
                 // Change this to '0.0.0.0' to access the server from outside.
                 hostname: 'localhost',
-                livereload: 35729
+                livereload: 35729,
+                useAvailablePort: true
             },
             livereload: {
                 options: {
@@ -80,6 +81,10 @@ module.exports = function (grunt) {
                                 '/app/styles',
                                 connect.static('./app/styles')
                             ),
+                            connect().use(
+                                '/data',
+                                connect.static('./data')
+                            ),
                             connect.static(appConfig.app)
                         ];
                     }
@@ -87,7 +92,7 @@ module.exports = function (grunt) {
             },
             test: {
                 options: {
-                    port: 9001,
+                    port: 9002,
                     middleware: function (connect) {
                         return [
                             connect.static('.tmp'),
@@ -103,8 +108,17 @@ module.exports = function (grunt) {
             },
             dist: {
                 options: {
+                    port: 9001,
                     open: true,
-                    base: '<%= yeoman.dist %>'
+                    middleware: function (connect) {
+                        return [
+                            connect().use(
+                                '/data',
+                                connect.static('./data')
+                            ),
+                            connect.static(appConfig.dist)
+                        ];
+                    }
                 }
             }
         },
