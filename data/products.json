@@ -1,51 +1,52 @@
-{
-    "product001": {
+[
+    {
         "name": "Useful Boots",
+        "id": "useful-boots",
         "dateAdded": 1434573538291,
         "imgSrc": "http://i.imgur.com/uTXTDUi.jpg",
         "thumbSrc": "http://i.imgur.com/uTXTDUim.jpg",
         "description": "For keeping your feet dry. Or not."
-    },
-    "product002": {
+    }, {
         "name": "Useful Bowl",
+        "id": "useful-bowl",
         "dateAdded": 1434573538292,
         "imgSrc": "http://i.imgur.com/NGYCSLm.jpg",
         "thumbSrc": "http://i.imgur.com/NGYCSLmm.jpg",
         "description": "For eating. Quickly."
-    },
-    "product003": {
+    }, {
         "name": "Useful Fork",
+        "id": "useful-fork",
         "dateAdded": 1434573538293,
         "imgSrc": "http://i.imgur.com/32aIn3Z.jpg",
         "thumbSrc": "http://i.imgur.com/32aIn3Zm.jpg",
         "description": "For not eating at all."
-    },
-    "product004": {
+    }, {
         "name": "Useful Key",
+        "id": "useful-key",
         "dateAdded": 1434573538294,
         "imgSrc": "http://i.imgur.com/qp56o1F.jpg",
         "thumbSrc": "http://i.imgur.com/qp56o1Fm.jpg",
         "description": "For opening doors."
-    },
-    "product005": {
+    }, {
         "name": "Useful Plate",
+        "id": "useful-plate",
         "dateAdded": 1434573538295,
         "imgSrc": "http://i.imgur.com/zRGD0gG.jpg",
         "thumbSrc": "http://i.imgur.com/zRGD0gGm.jpg",
         "description": "For .. eating?"
-    },
-    "product006": {
+    }, {
         "name": "Useful Pot",
+        "id": "useful-pot",
         "dateAdded": 1434573538296,
         "imgSrc": "http://i.imgur.com/fqVAiOC.jpg",
         "thumbSrc": "http://i.imgur.com/fqVAiOCm.jpg",
-        "description": "For beating your enemies to death."
-    },
-    "product007": {
+        "description": "For beating your enemies with."
+    }, {
         "name": "Useful Chair",
+        "id": "useful-chair",
         "dateAdded": 1434573538297,
         "imgSrc": "http://i.imgur.com/PpI077Q.jpg",
         "thumbSrc": "http://i.imgur.com/PpI077Qm.jpg",
         "description": "For sitting. Attentively!"
     }
-}
+]

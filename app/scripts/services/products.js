@@ -6,9 +6,11 @@
     // one service to rule them all ..
     app.service('productsService', function ($http, $q, $rootScope) {
 
+
+
         // Product object
-        function Product(id, data) {
-            this.id = id;
+        function Product(data) {
+            this.id = data.id;
             this.name = data.name || '';
             this.dateAdded = data.dateAdded;
             this.description = data.description || '';
@@ -24,6 +26,7 @@
 
 
         var productsPromise = null;
+        var ids = {};
         function fetchProducts()
         {
 
@@ -34,8 +37,10 @@
 
                     try
                     {
-                        return _.reduce(response.data, function (result, datum, id) {
-                            result[id] = new Product(id, datum);
+                        return _.reduce(response.data, function (result, datum) {
+                            var id = datum.id;
+                            ids[id] = true;
+                            result[id] = new Product(datum);
                             return result;
                         }, {});
                     }
