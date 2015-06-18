@@ -1,5 +1,7 @@
-<div ng-click="showProduct(product.id)">
-    <img ng-src="{{ product.thumbSrc }}">
-    <h3 ng-bind="product.name"></h3><span>(added&nbsp;<span ng-bind="product.dateAdded | date : 'd.MM.yyyy'"></span>)</span>
-    <p ng-bind="product.description"></p>
+<div class="thumbnail" ng-click="showProduct(product.id)">
+    <img class="product-image" ng-src="{{ product.thumbSrc }}">
+    <div class="caption">
+        <h2 ng-bind="product.name"></h2>
+        <span class="label label-default">(added&nbsp;<span ng-bind="product.dateAdded | date : 'd.MM.yyyy'"></span>)</span>
+    </div>
 </div>
