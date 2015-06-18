@@ -26,7 +26,7 @@
 
         return {
             replace: true,
-            templateUrl: 'views/product-view.html',
+            templateUrl: 'views/product-full.html',
             controller: 'productFullCtrl'
         };
 
