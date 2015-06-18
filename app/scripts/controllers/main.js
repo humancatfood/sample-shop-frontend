@@ -12,12 +12,18 @@
 
     var app = angular.module('app');
 
-    app.controller('MainCtrl', function ($scope) {
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
+    app.controller('MainCtrl', function ($scope, productsService) {
+
+        productsService.getAllProducts().then(function (products) {
+
+            $scope.products = products;
+
+        }, function (error) {
+
+            $scope.error = error;
+
+        });
+
     });
 
 }(window.angular));
