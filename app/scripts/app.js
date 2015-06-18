@@ -27,6 +27,13 @@
             controller: 'MainCtrl'
         });
 
+        // state for showing a specific product
+        $stateProvider.state('product-full', {
+            url: '/product/:productID',
+            templateUrl: 'views/main.html',
+            controller: 'MainCtrl'
+        });
+
         $stateProvider.state('about', {
             url: '/about',
             templateUrl: 'views/about.html',

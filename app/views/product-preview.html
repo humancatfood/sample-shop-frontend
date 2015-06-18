@@ -1,4 +1,4 @@
-<div>
+<div ng-click="showProduct(product.id)">
     <img ng-src="{{ product.thumbSrc }}">
     <h3 ng-bind="product.name"></h3><span>(added&nbsp;<span ng-bind="product.dateAdded | date : 'd.MM.yyyy'"></span>)</span>
     <p ng-bind="product.description"></p>
