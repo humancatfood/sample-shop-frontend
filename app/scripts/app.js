@@ -37,4 +37,9 @@
 
     }]);
 
+
+    app.run(['$rootScope', function ($rootScope) {
+        $rootScope.dataUrl = '/data/products.json';
+    }]);
+
 }(window.angular));
