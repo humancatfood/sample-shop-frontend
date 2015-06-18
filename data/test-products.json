@@ -1,0 +1,20 @@
+{
+    "a": {
+        "name": "A",
+        "dateAdded": 1434573538291,
+        "imgSrc": "xyz",
+        "description": "lorem ipsum"
+    },
+    "b": {
+        "name": "B",
+        "dateAdded": 1434573538292,
+        "imgSrc": "xyz",
+        "description": "dolor sit"
+    },
+    "c": {
+        "name": "C",
+        "dateAdded": 1434573538293,
+        "imgSrc": "xyz",
+        "description": "amet something something"
+    }
+}
