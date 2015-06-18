@@ -3,18 +3,21 @@
         "name": "A",
         "dateAdded": 1434573538291,
         "imgSrc": "xyz",
+        "thumbSrc": "xyz",
         "description": "lorem ipsum"
     },
     "b": {
         "name": "B",
         "dateAdded": 1434573538292,
         "imgSrc": "xyz",
+        "thumbSrc": "xyz",
         "description": "dolor sit"
     },
     "c": {
         "name": "C",
         "dateAdded": 1434573538293,
         "imgSrc": "xyz",
+        "thumbSrc": "xyz",
         "description": "amet something something"
     }
 }

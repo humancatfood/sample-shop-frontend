@@ -16,6 +16,10 @@
             this.imgSrc = data.imgSrc || null;
             this.imgAlt = data.imgAlt || this.name;
             this.imgTitle = data.imgTitle || this.name;
+
+            this.thumbSrc = data.thumbSrc || null;
+            this.thumbAlt = this.imgAlt;
+            this.thumbTitle = this.imgTitle;
         }
 
 
