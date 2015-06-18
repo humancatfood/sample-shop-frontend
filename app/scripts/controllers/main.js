@@ -2,12 +2,11 @@
 
 /**
  * @ngdoc function
- * @name sampleShopFrontendApp.controller:MainCtrl
+ * @name app.controller:MainCtrl
  * @description
  * # MainCtrl
  * Controller of the sampleShopFrontendApp
  */
-
 (function (angular) {
 
     var app = angular.module('app');

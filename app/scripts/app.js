@@ -2,9 +2,8 @@
 
 /**
  * @ngdoc overview
- * @name sampleShopFrontendApp
+ * @name app
  * @description
- * # sampleShopFrontendApp
  *
  * Main module of the application.
  */
@@ -17,11 +16,15 @@
                                       'ngTouch',
                                       'ui.router' ]);
 
+    // main entry point
     app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', function ($locationProvider, $stateProvider, $urlRouterProvider) {
 
-        $locationProvider.html5Mode(true);
+        // Uncomment this to do away with the ugly hash symbol in the url. That would need a better back-end first though,
+        // that properly redirects urls like http://localhost:9000/product/product001 to index.html
+        // $locationProvider.html5Mode(true);
 
-         $stateProvider.state('main', {
+        // default state for listing product-previews
+        $stateProvider.state('main', {
             url: '/',
             templateUrl: 'views/main.html',
             controller: 'MainCtrl'
@@ -45,6 +48,7 @@
     }]);
 
 
+    // putting the data-url on the rootScope enables us to inject different urls for unit-testing
     app.run(['$rootScope', function ($rootScope) {
         $rootScope.dataUrl = '/data/products.json';
     }]);
