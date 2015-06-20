@@ -13,15 +13,29 @@
 
     app.controller('MainCtrl', ['$scope', '$state', 'productsService', '$stateParams', function ($scope, $state, productsService, $stateParams) {
 
-        productsService.getAllProducts().then(function (products) {
 
-            $scope.products = products;
+        $scope.updateProducts = function () {
 
-        }, function (error) {
+            productsService.getAllProducts().then(function (products) {
 
-            $scope.error = error;
+                $scope.products = products;
 
-        });
+            }, function (error) {
+
+                $scope.error = error;
+
+            });
+
+        };
+        $scope.updateProducts();
+
+
+        $scope.newProduct = function () {
+
+            $scope.productID = false;
+            $scope.product = productsService.getDummy();
+
+        };
 
 
         $scope.showProduct = function (productID) {

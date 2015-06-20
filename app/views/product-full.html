@@ -1,18 +1,52 @@
-<div class="modal fade product-modal" id="product-view" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade product-modal" ng-class="{'edit-mode': editMode}" tabindex="-1" role="dialog" aria-labelledby="productModalLabel">
     <div class="modal-dialog" role="document">
+
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel" ng-bind="product.name"></h4>
+                <h4 class="modal-title" id="productModalLabel" ng-bind="(editMode ? 'Edit product: ' : 'View product: ') + product.name"></h4>
             </div>
             <div class="modal-body">
-                <p class="product-description" ng-bind="product.description"></p>
-                <img class="product-image" ng-src="{{ product.img }}" alt="{{ product.imgAlt }}" title="{{ product.imgTitle }}">
+
+                <h2 class="product-name" ng-bind="product.name" ng-hide="editMode"></h2>
+                <input tabindex="1" type="text" class="form-control input-lg" placeholder="Product Name" ng-model="dummy.name" ng-show="editMode">
+
+                <img class="product-image" ng-src="{{ product.img }}" alt="{{ product.name }}" title="{{ product.name }}">
+                <input tabindex="2" type="text" class="form-control input-md" placeholder="Product Image Url" ng-model="dummy.img" ng-show="editMode">
+
+                <p class="product-description" ng-bind="product.description" ng-hide="editMode"></p>
+                <textarea tabindex="3" class="form-control input-md" rows="3" placeholder="Product Description" ng-model="dummy.description" ng-show="editMode"></textarea>
+
+                <span class="label label-default" ng-hide="editMode">(added&nbsp;<span ng-bind="product.dateAdded | date : 'd.MM.yyyy'"></span>)</span>
+
             </div>
+
+            <!-- edit-mode buttons -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+
+                <button type="button" tabindex="7" class="btn btn-danger pull-left" ng-show="editMode" ng-click="delete()">
+                    Delete Product&nbsp;<span class="glyphicon glyphicon-trash"></span>
+                </button>
+
+                <button type="button" tabindex="4" class="btn btn-success"
+                        ng-class="{disabled: !dummyHasChanged || !dummyIsValid}" ng-click="save()" ng-show="editMode">
+                    Save changes&nbsp;<span class="glyphicon glyphicon-ok"></span>
+                </button>
+
+                <button type="button" tabindex="4" class="btn btn-primary" ng-click="edit()" ng-hide="editMode">
+                    Edit Product&nbsp;<span class="glyphicon glyphicon-pencil"></span>
+                </button>
+
+                <button type="button" tabindex="5" class="btn btn-default" ng-show="editMode" ng-click="editMode = false;">
+                    Cancel&nbsp;<span class="glyphicon glyphicon-remove"></span>
+                </button>
+
+                <button type="button" tabindex="5" class="btn btn-default" ng-hide="editMode" data-dismiss="modal">
+                    Close&nbsp;<span class="glyphicon glyphicon-remove"></span>
+                </button>
+
             </div>
         </div>
+
     </div>
 </div>

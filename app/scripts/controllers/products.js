@@ -32,22 +32,57 @@
 
     });
 
+
     app.controller('productFullCtrl', function ($scope, $element, $state, productsService) {
 
         var $el = $($element);
 
-        //
+        function showModal()
+        {
+            $el.modal({
+                show: true
+            });
+        }
+
+        function hideModal()
+        {
+            $el.modal({
+                show: false
+            });
+        }
+
         $el.on('hidden.bs.modal', function () {
             $state.go('main');
         });
 
 
-        $scope.editProduct = function () {
+        $scope.edit = function () {
+
+            $scope.dummy = productsService.getDummy($scope.product);
+            $scope.editMode = true;
 
         };
 
 
-        $scope.saveProduct = function () {
+        $scope.save = function () {
+
+            productsService.updateProduct($scope.product, $scope.dummy);
+            productsService.saveProduct($scope.product);
+            $scope.editMode = false;
+            $scope.updateProducts();
+
+        };
+
+
+        $scope.delete = function () {
+
+            productsService.deleteProduct($scope.product);
+            $scope.editMode = false;
+            $scope.product = null;
+            $scope.productID = null;
+            $scope.dummy = null;
+            hideModal();        // TODO: make sure, this works!
+            $scope.updateProducts();
 
         };
 
@@ -57,9 +92,8 @@
             if (productID)
             {
                 $scope.loading = true;
-                $el.modal({
-                    show: true
-                });
+
+                showModal();
 
                 productsService.getProduct(productID).then(function (product) {
 
@@ -68,14 +102,34 @@
 
                 });
             }
-            else
+
+        });
+
+
+        $scope.$watch('product', function (product) {
+
+            if (product)
             {
-                $el.modal({
-                    show: false
-                });
+                showModal();
+
+                if (product.isDummy)
+                {
+                    $scope.edit();
+                }
             }
 
         });
+
+
+        $scope.$watch('dummy', function (dummy) {
+
+            if (dummy)
+            {
+                $scope.dummyHasChanged = !productsService.productsEqual(dummy, $scope.product);
+                $scope.dummyIsValid = !!productsService.validateProduct(dummy).ok;
+            }
+
+        }, true);
 
     });
 
