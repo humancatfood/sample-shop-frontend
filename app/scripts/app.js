@@ -30,7 +30,7 @@
             controller: 'MainCtrl'
         });
 
-        // state for showing a specific product
+        // state for showing/editing a specific product
         $stateProvider.state('product-full', {
             url: '/product/:productID',
             templateUrl: 'views/main.html',
