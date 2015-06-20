@@ -1,52 +1,45 @@
 [
     {
         "name": "Useful Boots",
-        "id": "useful-boots",
+        "id": 1,
         "dateAdded": 1434573538291,
-        "imgSrc": "http://i.imgur.com/uTXTDUi.jpg",
-        "thumbSrc": "http://i.imgur.com/uTXTDUim.jpg",
-        "description": "For keeping your feet dry. Or not."
+        "img": "http://i.imgur.com/uTXTDUi.jpg",
+        "description": "For keeping your feet dry.. ish."
     }, {
         "name": "Useful Bowl",
-        "id": "useful-bowl",
+        "id": 2,
         "dateAdded": 1434573538292,
-        "imgSrc": "http://i.imgur.com/NGYCSLm.jpg",
-        "thumbSrc": "http://i.imgur.com/NGYCSLmm.jpg",
+        "img": "http://i.imgur.com/NGYCSLm.jpg",
         "description": "For eating. Quickly."
     }, {
         "name": "Useful Fork",
-        "id": "useful-fork",
+        "id": 3,
         "dateAdded": 1434573538293,
-        "imgSrc": "http://i.imgur.com/32aIn3Z.jpg",
-        "thumbSrc": "http://i.imgur.com/32aIn3Zm.jpg",
+        "img": "http://i.imgur.com/32aIn3Z.jpg",
         "description": "For not eating at all."
     }, {
         "name": "Useful Key",
-        "id": "useful-key",
+        "id": 4,
         "dateAdded": 1434573538294,
-        "imgSrc": "http://i.imgur.com/qp56o1F.jpg",
-        "thumbSrc": "http://i.imgur.com/qp56o1Fm.jpg",
+        "img": "http://i.imgur.com/qp56o1F.jpg",
         "description": "For opening doors."
     }, {
         "name": "Useful Plate",
-        "id": "useful-plate",
+        "id": 5,
         "dateAdded": 1434573538295,
-        "imgSrc": "http://i.imgur.com/zRGD0gG.jpg",
-        "thumbSrc": "http://i.imgur.com/zRGD0gGm.jpg",
+        "img": "http://i.imgur.com/zRGD0gG.jpg",
         "description": "For .. eating?"
     }, {
         "name": "Useful Pot",
-        "id": "useful-pot",
+        "id": 6,
         "dateAdded": 1434573538296,
-        "imgSrc": "http://i.imgur.com/fqVAiOC.jpg",
-        "thumbSrc": "http://i.imgur.com/fqVAiOCm.jpg",
+        "img": "http://i.imgur.com/fqVAiOC.jpg",
         "description": "For beating your enemies with."
     }, {
         "name": "Useful Chair",
-        "id": "useful-chair",
+        "id": 7,
         "dateAdded": 1434573538297,
-        "imgSrc": "http://i.imgur.com/PpI077Q.jpg",
-        "thumbSrc": "http://i.imgur.com/PpI077Qm.jpg",
+        "img": "http://i.imgur.com/PpI077Q.jpg",
         "description": "For sitting. Attentively!"
     }
 ]

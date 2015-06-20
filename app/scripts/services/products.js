@@ -25,24 +25,25 @@
         }
 
 
+        var products = {};
+        var maxID = 0;
         var productsPromise = null;
-        var ids = {};
         function fetchProducts()
         {
 
             if (!productsPromise)
             {
-
                 productsPromise = $http.get($rootScope.dataUrl).then(function (response) {
 
                     try
                     {
-                        return _.reduce(response.data, function (result, datum) {
-                            var id = datum.id;
-                            ids[id] = true;
-                            result[id] = new Product(datum);
+                        products = _.reduce(response.data, function (result, datum) {
+                            result[datum.id] = new Product(datum);
+                            maxID = Math.max(maxID, datum.id);
                             return result;
                         }, {});
+
+                        return products;
                     }
                     catch (error)
                     {

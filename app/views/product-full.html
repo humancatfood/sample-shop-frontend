@@ -6,8 +6,8 @@
                 <h4 class="modal-title" id="myModalLabel" ng-bind="product.name"></h4>
             </div>
             <div class="modal-body">
-                <img class="product-image" ng-src="{{ product.imgSrc }}">
                 <p class="product-description" ng-bind="product.description"></p>
+                <img class="product-image" ng-src="{{ product.img }}" alt="{{ product.imgAlt }}" title="{{ product.imgTitle }}">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
