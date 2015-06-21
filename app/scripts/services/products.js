@@ -1,21 +1,32 @@
 'use strict';
+
+/**
+ * @name productsService
+ * @description
+ *
+ * Serves as interface for fetching data and data-model for products. Two functionalities that should probably
+ * be split up.
+ *
+ */
+
 (function (angular, _) {
 
     var app = angular.module('app');
 
-    // one service to rule them all ..
     app.service('productsService', function ($http, $q, $rootScope) {
 
-        var products = {};
-        var maxID = 0;
+        var products = {};          // cache products by id
+        var maxID = 0;              // running ID to assign to newly created products (should happen on the server really)
+
+
+        // fetches products from the "backend" and caches them. Internal use only.
         var productsPromise = null;
-
-
         function fetchProducts()
         {
 
             if (!productsPromise)
             {
+
                 productsPromise = $http.get($rootScope.dataUrl).then(function (response) {
 
                     products = _.reduce(response.data, function (result, datum) {
@@ -58,13 +69,21 @@
 
         }
 
-
+        // pushes products to the back-end. Didn't get round to implement this, so products will reset on each page-reload
         function pushProducts()
         {
-
+            // stub
         }
 
 
+        /**
+         * @name saveProduct
+         * @description
+         *
+         * Saves a product into the products-object under a new id. If the product already has an id, it will overwrite
+         * any existing entry.
+         *
+         */
         this.saveProduct = function (product) {
 
             var that = this;
@@ -98,6 +117,13 @@
         };
 
 
+        /**
+         * @name getAllProducts
+         * @description
+         *
+         * Get a dictionary {id: product} of all the products available.
+         *
+         */
         this.getAllProducts = function () {
 
             return fetchProducts().then(function (products) {
@@ -109,6 +135,13 @@
         };
 
 
+        /**
+         * @name getProduct
+         * @description
+         *
+         * Get a product by its id.
+         *
+         */
         this.getProduct = function (productID) {
 
             return fetchProducts().then(function (products) {
@@ -127,6 +160,13 @@
         };
 
 
+        /**
+         * @name updateProduct
+         * @description
+         *
+         * Updates pertinent fields (name, description, img) in oldProduct with corresponding values from newProduct.
+         *
+         */
         this.updateProduct = function (oldProduct, newProduct) {
 
             oldProduct.name = newProduct.name;
@@ -136,6 +176,13 @@
         };
 
 
+        /**
+         * @name deleteProduct
+         * @description
+         *
+         * Deletes product.
+         *
+         */
         this.deleteProduct = function (product) {
 
             return $q(function(resolve, reject) {
@@ -147,6 +194,7 @@
                 else
                 {
                     delete products[product.id];
+                    pushProducts();
                     resolve();
                 }
 
@@ -155,6 +203,13 @@
         };
 
 
+        /**
+         * @name getDummy
+         * @description
+         *
+         * Returns a new product, optionally initialised with values from the passed product.
+         *
+         */
         this.getDummy = function (product) {
 
             if (!!product)
