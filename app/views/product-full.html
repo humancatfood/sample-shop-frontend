@@ -11,7 +11,7 @@
                 <h2 class="product-name" ng-bind="product.name" ng-hide="editMode"></h2>
                 <input tabindex="1" type="text" class="form-control input-lg" placeholder="Product Name" ng-model="dummy.name" ng-show="editMode">
 
-                <img class="product-image" ng-src="{{ product.img }}" alt="{{ product.name }}" title="{{ product.name }}">
+                <img class="product-image" ng-src="{{ editMode ? dummy.img : product.img }}" alt="{{ product.name }}" title="{{ product.name }}">
                 <input tabindex="2" type="text" class="form-control input-md" placeholder="Product Image Url" ng-model="dummy.img" ng-show="editMode">
 
                 <p class="product-description" ng-bind="product.description" ng-hide="editMode"></p>
