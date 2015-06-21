@@ -14,7 +14,7 @@
                 <img class="product-image" ng-src="{{ editMode ? dummy.img : product.img }}" alt="{{ product.name }}" title="{{ product.name }}">
                 <input tabindex="2" type="text" class="form-control input-md" placeholder="Product Image Url" ng-model="dummy.img" ng-show="editMode">
 
-                <p class="product-description" ng-bind="product.description" ng-hide="editMode"></p>
+                <div class="product-description" ng-bind="product.description" ng-hide="editMode"></div>
                 <textarea tabindex="3" class="form-control input-md" rows="3" placeholder="Product Description" ng-model="dummy.description" ng-show="editMode"></textarea>
 
                 <span class="label label-default" ng-hide="editMode">(added&nbsp;<span ng-bind="product.dateAdded | date : 'd.MM.yyyy'"></span>)</span>
