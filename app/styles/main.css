@@ -239,8 +239,7 @@ body {
   font-size: 3rem;
 }
 .product-modal .product-image {
-  max-width: 100%;
-  width: auto;
+  width: 100%;
   margin-top: 2rem;
 }
 .product-modal .product-description,
