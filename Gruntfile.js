@@ -40,8 +40,8 @@ module.exports = function (grunt) {
                 tasks: ['newer:jshint:test', 'karma']
             },
             styles: {
-                files: ['<%= yeoman.app %>/styles/**/*.css'],
-                tasks: ['newer:copy:styles', 'autoprefixer']
+                files: ['<%= yeoman.app %>/styles/main.css', '<%= yeoman.app %>/styles/**/*.less'],
+                tasks: ['newer:copy:styles', 'autoprefixer', 'less']
             },
             gruntfile: {
                 files: ['Gruntfile.js']
@@ -276,6 +276,17 @@ module.exports = function (grunt) {
         // concat: {
         //     dist: {}
         // },
+
+        less: {
+            development: {
+                options: {
+                    paths: ['<%= yeoman.app %>/styles/less']
+                },
+                files: {
+                    '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.less'
+                }
+            }
+        },
 
         imagemin: {
             dist: {
