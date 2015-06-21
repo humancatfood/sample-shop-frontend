@@ -86,7 +86,7 @@
 
         $scope.cancel = function () {
 
-            if (!$scope.editMode)
+            if (!$scope.editMode || $scope.product.isDummy)
             {
                 $scope.product = null;
                 $scope.productID = null;
