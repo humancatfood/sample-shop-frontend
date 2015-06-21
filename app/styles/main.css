@@ -219,12 +219,28 @@ body {
   text-align: center;
 }
 .thumbnail {
-  text-align: left;
   cursor: pointer;
+}
+.thumbnail .caption {
+  text-align: left;
 }
 .product-image {
   max-width: 100%;
+  width: auto;
 }
-.product-modal .modal-title {
-  border-bottom: 1px solid #777777;
+@media (min-width: 768px) {
+  .product-image {
+    height: 325px!important;
+  }
+}
+@media (min-width: 992px) {
+  .product-image {
+    height: 200px!important;
+  }
+}
+@media (min-width: 1200px) {
+  .product-image {
+    height: 135px!important;
+    width: auto;
+  }
 }
