@@ -142,7 +142,7 @@
 
                 if (!products[product.id])
                 {
-                    reject('Product not found');
+                    reject('Error 404: Product not found');
                 }
                 else
                 {
