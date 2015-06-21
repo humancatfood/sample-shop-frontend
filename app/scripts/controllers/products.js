@@ -39,16 +39,12 @@
 
         function showModal()
         {
-            $el.modal({
-                show: true
-            });
+            $el.modal('show');
         }
 
         function hideModal()
         {
-            $el.modal({
-                show: false
-            });
+            $el.modal('hide');
         }
 
         $el.on('hidden.bs.modal', function () {
@@ -81,7 +77,7 @@
             $scope.product = null;
             $scope.productID = null;
             $scope.dummy = null;
-            hideModal();        // TODO: make sure, this works!
+            hideModal();
             $scope.updateProducts();
 
         };
