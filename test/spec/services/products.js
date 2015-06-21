@@ -247,7 +247,6 @@ describe('Services: productsService asynchronous', function () {
     });
 
 
-
     it('should save new products.', function (){
 
         var dummy = productsService.getDummy(validDummyData[0]);
