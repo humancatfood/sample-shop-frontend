@@ -241,5 +241,9 @@ body {
 .product-modal .product-image {
   max-width: 100%;
   width: auto;
+  margin-top: 2rem;
+}
+.product-modal .product-description,
+.product-modal .product-description-edit {
   margin: 2rem 0;
 }
