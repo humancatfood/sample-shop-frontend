@@ -86,15 +86,15 @@
 
         $scope.cancel = function () {
 
-            $scope.dummy = null;
-            $scope.editMode = false;
-
             if (!$scope.editMode)
             {
                 $scope.product = null;
                 $scope.productID = null;
                 hideModal();
             }
+
+            $scope.dummy = null;
+            $scope.editMode = false;
 
         };
 
