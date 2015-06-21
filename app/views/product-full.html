@@ -36,12 +36,8 @@
                     Edit Product&nbsp;<span class="glyphicon glyphicon-pencil"></span>
                 </button>
 
-                <button type="button" tabindex="5" class="btn btn-default" ng-show="editMode" ng-click="editMode = false;">
-                    Cancel&nbsp;<span class="glyphicon glyphicon-remove"></span>
-                </button>
-
-                <button type="button" tabindex="5" class="btn btn-default" ng-hide="editMode" data-dismiss="modal">
-                    Close&nbsp;<span class="glyphicon glyphicon-remove"></span>
+                <button type="button" tabindex="5" class="btn btn-default" ng-click="cancel()">
+                    {{ editMode ? 'Cancel' : 'Close' }}&nbsp;<span class="glyphicon glyphicon-remove"></span>
                 </button>
 
             </div>

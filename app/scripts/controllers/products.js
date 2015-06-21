@@ -48,6 +48,10 @@
         }
 
         $el.on('hidden.bs.modal', function () {
+            $scope.editMode = false;
+            $scope.product = null;
+            $scope.productID = null;
+            $scope.dummy = null;
             $state.go('main');
         });
 
@@ -65,6 +69,7 @@
             productsService.updateProduct($scope.product, $scope.dummy);
             productsService.saveProduct($scope.product);
             $scope.editMode = false;
+            $scope.dummy = null;
             $scope.updateProducts();
 
         };
@@ -73,12 +78,23 @@
         $scope.delete = function () {
 
             productsService.deleteProduct($scope.product);
-            $scope.editMode = false;
-            $scope.product = null;
-            $scope.productID = null;
-            $scope.dummy = null;
             hideModal();
             $scope.updateProducts();
+
+        };
+
+
+        $scope.cancel = function () {
+
+            $scope.dummy = null;
+            $scope.editMode = false;
+
+            if (!$scope.editMode)
+            {
+                $scope.product = null;
+                $scope.productID = null;
+                hideModal();
+            }
 
         };
 
