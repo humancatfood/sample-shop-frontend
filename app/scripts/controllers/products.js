@@ -137,8 +137,16 @@
 
             if (dummy)
             {
+                var validation = productsService.validateProduct(dummy);
+                $scope.errors = validation.errors;
                 $scope.dummyHasChanged = !productsService.productsEqual(dummy, $scope.product);
-                $scope.dummyIsValid = !!productsService.validateProduct(dummy).ok;
+                $scope.dummyIsValid = !!validation.ok;
+            }
+            else
+            {
+                $scope.errors = null;
+                $scope.dummyHasChanged = null;
+                $scope.dummyIsValid = null;
             }
 
         }, true);
