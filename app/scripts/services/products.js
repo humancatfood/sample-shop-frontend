@@ -29,33 +29,42 @@
 
                 productsPromise = $http.get($rootScope.dataUrl).then(function (response) {
 
-                    products = _.reduce(response.data, function (result, datum) {
+                    try
+                    {
 
-                        var id = parseInt(datum.id, 10);
-                        if (!id)
-                        {
-                            throw new Error('invalid ID "' + datum.id + '"! Product IDs must be positive integers');
-                        }
-                        else if (result[id])
-                        {
-                            throw new Error('duplicate ID "' + datum.id + '" in data');
-                        }
-                        else
-                        {
-                            result[id] = {
-                                id: id,
-                                name: datum.name || '',
-                                description: datum.description || '',
-                                img: datum.img || null,
-                                dateAdded: datum.dateAdded
-                            };
-                            maxID = Math.max(maxID, id);
-                            return result;
-                        }
+                        products = _.reduce(response.data, function (result, datum) {
 
-                    }, {});
+                            var id = parseInt(datum.id, 10);
+                            if (!id)
+                            {
+                                throw new Error('invalid ID "' + datum.id + '"! Product IDs must be positive integers');
+                            }
+                            else if (result[id])
+                            {
+                                throw new Error('duplicate ID "' + datum.id + '" in data');
+                            }
+                            else
+                            {
+                                result[id] = {
+                                    id: id,
+                                    name: datum.name || '',
+                                    description: datum.description || '',
+                                    img: datum.img || null,
+                                    dateAdded: datum.dateAdded
+                                };
+                                maxID = Math.max(maxID, id);
+                                return result;
+                            }
 
-                    return products;
+                        }, {});
+
+                        return products;
+
+                    }
+                    catch (error)
+                    {
+                        return $q.reject(error);
+                    }
 
                 }, function (response) {
 
