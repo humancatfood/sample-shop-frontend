@@ -28,7 +28,7 @@
                 </button>
 
                 <button type="button" tabindex="4" class="btn btn-success"
-                        ng-class="{disabled: !dummyHasChanged || !dummyIsValid}" ng-click="save()" ng-show="editMode">
+                        ng-disabled="!dummyHasChanged || !dummyIsValid" ng-click="save()" ng-show="editMode">
                     Save changes&nbsp;<span class="glyphicon glyphicon-ok"></span>
                 </button>
 
