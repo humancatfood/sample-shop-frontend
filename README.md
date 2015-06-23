@@ -5,12 +5,12 @@ version 0.11.1.
 
 It requires NodeJS v.0.10.0 or higher
 
-## Features
+### Features
 
 This is a mock application for showcasing CRUD functionality. On running and opening the app in the browser, a number of "products" is previewed to the user, each displaying a name, image and the date it was added. Clicking on a product preview opens a modal with the full product with description and functionality for editing/deleting. New products can be added by clicking the "Add Product" button.
 
 
-## Setup
+### Setup
 
 To set up the project, clone and enter the repository, then run
 
@@ -20,7 +20,7 @@ and
 
 `bower install`
 
-## Run
+### Run
 
 To run the development version, enter
 
@@ -34,12 +34,12 @@ or
 To build and serve the dist-version (on localhost:9001)
 
 
-## Test
+### Test
 
 Running `grunt test` will run js-hint and the unit tests with karma.
 
 
-## CRUD
+### CRUD
 
 <dl>
 
@@ -67,7 +67,7 @@ Running `grunt test` will run js-hint and the unit tests with karma.
 </dl>
  
 
-## Naming conventions
+### Naming conventions
 
 The code deals with
 
@@ -92,7 +92,7 @@ The code deals with
 </dl>
  
 
-## Limitations
+### Limitations
 
 - The products list is pure front-end mock data and can't be stored permanently. On each page-reload the products are reset to the data in `data/products.json` (possible improvements: store changed & added products in local-storage, implements a mock back-end that stores and reads data).
 
