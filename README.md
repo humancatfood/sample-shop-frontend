@@ -62,7 +62,7 @@ Running `grunt test` will run js-hint and the unit tests with karma.
   
     <dt>Delete a product<dt>
     <dd>
-        <p>by clicking on it in the preview list and clicking <em>Edit</em> and then <em>Delete/em> in the resulting modal.</p>
+        <p>by clicking on it in the preview list and clicking <em>Edit</em> and then <em>Delete</em> in the resulting modal.</p>
     </dd>
 </dl>
  
