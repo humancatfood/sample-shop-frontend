@@ -1,32 +1,84 @@
 'use strict';
 
-/* https://github.com/angular/protractor/blob/master/docs/toc.md */
+/*global it: true*/
+/*global beforeEach: true*/
+/*global afterEach: true*/
+/*global describe: true*/
+/*global expect: true*/
+/*global browser: true*/
+/*global element: true*/
+/*global by: true*/
+/*global require: true*/
+
 
 var data = require('../../data/products.json');
 
 describe('app', function() {
 
-    console.info(data);
 
     it('should display a list of product-previews', function() {
 
         browser.get('/');
-        expect(element.all(by.css('.preview-list li')).count()).toEqual(data.length);
+
+        expect(element(by.css('.preview-list')).isPresent()).toBeTruthy();
+
+        expect(element.all(by.css('.preview-list .preview-item')).count()).toEqual(data.length);
 
     });
 
-    it('should display an image, a title and a date for each product', function() {
+
+    it('should not display the product-modal yet', function() {
 
         browser.get('/');
+
+        expect(element(by.css('.product-modal')).isDisplayed()).toBeFalsy();
+
+    });
+
+
+    it('should display an image and a title for each product', function() {
+
+        browser.get('/');
+
         for (var i = 0; i < data.length; i ++)
         {
-            var el = element.all(by.css('.preview-list li')).get(i);
 
-            expect(el(by.css('img').getAttribute('src'))).toEqual(data[i].img);
+            var previewItem = element.all(by.css('.preview-list .preview-item')).get(i);
+
+            expect(previewItem.element(by.css('.preview-title')).isPresent()).toBeTruthy();
+            expect(previewItem.element(by.css('.preview-title')).getText()).toEqual(data[i].name);
+
+            expect(previewItem.element(by.css('.preview-image')).isPresent()).toBeTruthy();
+            expect(previewItem.element(by.css('.preview-image')).getAttribute('src')).toEqual(data[i].img);
 
         }
 
+    });
+
+
+    it('should display a product modal when clicking on a product', function() {
+
+        browser.get('/');
+
+        for (var i = 0; i < data.length; i ++)
+        {
+
+            element.all(by.css('.preview-list .preview-item')).get(i).click();
+
+            var modal = element(by.css('.product-modal'));
+            var backdrop = element(by.css('.modal'));
+
+            expect(modal.isDisplayed()).toBeTruthy();
+            expect(backdrop.isDisplayed()).toBeTruthy();
+
+            element(backdrop).click();
+
+            expect(modal.isDisplayed()).toBeFalsy();
+            expect(backdrop.isDisplayed()).toBeFalsy();
+
+        }
 
     });
+
 
 });
