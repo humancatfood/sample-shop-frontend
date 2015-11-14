@@ -55,7 +55,9 @@
         "preupdate-webdriver": "npm install",
         "update-webdriver": "webdriver-manager update",
 
-        "protractor": "protractor test/protractor.conf.js"
+        "protractor": "protractor test/protractor.conf.js",
+        
+        "deploy": "git subtree push --prefix dist origin gh-pages"
 
     }
 }
